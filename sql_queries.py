@@ -9,18 +9,54 @@ time_table_drop = ""
 # CREATE TABLES
 
 songplay_table_create = ("""
+    CREATE TABLE IF NOT EXISTS songplays (
+        songplay_id  INT PRIMARY KEY, 
+        start_time TIMESTAMP,
+        user_id INT,
+        level VARCHAR,
+        song_id VARCHAR,
+        artist_id VARCHAR,
+        session_id INT,
+        location VARCHAR,
+        user_agent VARCHAR);
 """)
 
 user_table_create = ("""
+    CREATE TABLE IF NOT EXISTS users (
+        user_id  INT PRIMARY KEY, 
+        first_name VARCHAR,
+        last_name VARCHAR,
+        gender VARCHAR,
+        level VARCHAR);
 """)
 
 song_table_create = ("""
+    CREATE TABLE IF NOT EXISTS songs (
+        song_id  VARCHAR PRIMARY KEY, 
+        title VARCHAR,
+        artist_id VARCHAR,
+        year INT,
+        duration VARCHAR);
 """)
 
 artist_table_create = ("""
+    CREATE TABLE IF NOT EXISTS artists (
+        artist_id  VARCHAR PRIMARY KEY, 
+        name VARCHAR,
+        location VARCHAR,
+        latitude NUMERIC,
+        langutide NUMERIC);
 """)
 
 time_table_create = ("""
+    CREATE TABLE IF NOT EXISTS time (
+        start_time TIMESTAMP PRIMARY KEY, 
+        hour INT,
+        day INT,
+        week INT,
+        month INT,
+        year INT,
+        weekday INT);
 """)
 
 # INSERT RECORDS
