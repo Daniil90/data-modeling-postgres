@@ -94,7 +94,7 @@ song_select = ("""
     FROM songs s
     JOIN artists a
     ON a.artist_id = s.artist_id
-    WHERE s.title = %s AND a.name = %s AND s.duration = %s
+    WHERE (s.title = %s AND a.name = %s AND s.duration = %s)
 """)
 
 # QUERY LISTS
